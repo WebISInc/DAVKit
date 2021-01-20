@@ -74,7 +74,7 @@
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	
 	if ([elementName isEqualToString:@"href"]) {
-		_currentItem.href = [_currentString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		_currentItem.href = [_currentString stringByRemovingPercentEncoding];
 	}
 	else if ([elementName isEqualToString:@"getcontentlength"]) {
 		_currentItem.contentLength = [_currentString longLongValue];

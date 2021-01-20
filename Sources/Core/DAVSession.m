@@ -7,9 +7,7 @@
 
 #import "DAVSession.h"
 
-#import "DAVRequest.h"
-#import "DAVRequest+Private.h"
-#import "DAVRequests.h"
+#import "Informant-Swift.h"
 
 @implementation DAVSession
 

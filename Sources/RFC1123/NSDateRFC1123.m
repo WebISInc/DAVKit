@@ -25,7 +25,7 @@
     NSDate *ret = [rfc1123 dateFromString:value_];
     if(ret != nil)
         return ret;
-	
+
     static NSDateFormatter *rfc850 = nil;
     if(rfc850 == nil)
     {
@@ -37,7 +37,7 @@
     ret = [rfc850 dateFromString:value_];
     if(ret != nil)
         return ret;
-	
+
     static NSDateFormatter *asctime = nil;
     if(asctime == nil)
     {

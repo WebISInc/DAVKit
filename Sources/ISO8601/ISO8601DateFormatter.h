@@ -29,18 +29,13 @@ enum {
 	ISO8601DateFormatOrdinal,
 	ISO8601DateFormatWeek,
 };
-typedef NSUInteger ISO8601DateFormat;
+typedef unsigned ISO8601DateFormat;
 
 //The default separator for time values. Currently, this is ':'.
 extern unichar ISO8601DefaultTimeSeparatorCharacter;
 
 @interface ISO8601DateFormatter: NSFormatter
 {
-	NSString *lastUsedFormatString;
-	NSDateFormatter *unparsingFormatter;
-
-	NSCalendar *parsingCalendar, *unparsingCalendar;
-
 	NSTimeZone *defaultTimeZone;
 	ISO8601DateFormat format;
 	unichar timeSeparator;
@@ -48,10 +43,7 @@ extern unichar ISO8601DefaultTimeSeparatorCharacter;
 	BOOL parsesStrictly;
 }
 
-//Call this if you get a memory warning.
-+ (void) purgeGlobalCaches;
-
-@property(nonatomic, retain) NSTimeZone *defaultTimeZone;
+@property(retain) NSTimeZone *defaultTimeZone;
 
 #pragma mark Parsing
 
